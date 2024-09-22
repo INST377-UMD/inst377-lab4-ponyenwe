@@ -65,8 +65,13 @@
                 }
             }
             function updateHeader(){
-                const header = document.getElementById("bar");
-                header.textContent += "Adding.... it's Added!!";
+                const heading = document.getElementById("bar");
+                if (heading.textContent == "Lab 3 - Alert") {
+                    heading.textContent += ": Adding Header .... it's Added!!";
+                }
+                 else {
+                    heading.textContent = "Lab 3 - Alert";
+                }
             }
         </script> 
     </body>
