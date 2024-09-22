@@ -1,0 +1,73 @@
+<html style="background-color:rgb(142, 196, 164);">
+    <head>
+        <title> INST377- Class Page</title>
+        <link rel = "stylesheet" href="Lab4.css">
+    </head>
+
+    <body>
+        <!-- Header Section-->
+         <header>
+            <h1 id="bar"> Lab 3 - Alert </h1>
+         </header>
+         <div class="sections">
+            <div>
+                <section id="section1">
+                    <form>
+                        <label for="name">Name: </label>
+                        <input type="text" id="fullName" required>
+                        <button onclick="showAlert()">Alert Me!</button>
+                    </form>
+                </section>
+            </div>
+            <div>
+                <section id ="section2">
+                    <aside id ="aside0">
+                        <button type="button" onclick="changeColor()">Change Color</button>
+                    </aside>
+                </section>
+            </div>
+            
+            <div>
+                <section id = "section3">
+                    <form name="validator" onsubmit="return(textValidation())">
+                        <label for = "tester"> Text Tester: </label>
+                        <input type="text" id="textTester">
+                        <input type ="submit" value="Validate Text">
+                </form>
+            </section>
+        </div>
+        <div>
+            <section id = "section4">
+                <aside id="aside1">
+                    <button onclick="updateHeader()">Add Text</button>
+                </aside>
+            </section>
+        </div>
+          
+    </div> 
+
+        <script> type="text/javascript"
+            function showAlert(){
+                const name = document.getElementById("fullName").value;
+                alert("Hi "+ name + "!");
+            }
+            function changeColor(){
+                if(document.body.style.backgroundColor === ""){
+                    document.body.style.backgroundColor = "bisque";
+                } else {
+                    document.body.style.backgroundColor = ""
+                }
+            }
+            function textValidation(){
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(validation.test(document.validator.textTester.value)){
+                    alert('No special characters allowed!!!')
+                }
+            }
+            function updateHeader(){
+                const header = document.getElementById("bar");
+                header.textContent += "Adding.... it's Added!!";
+            }
+        </script> 
+    </body>
+</html>
